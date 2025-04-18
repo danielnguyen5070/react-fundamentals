@@ -1,5 +1,4 @@
-import { createRoot } from 'react-dom/client'
-import React from 'react'
+import React from "react"
 
 const operations = {
 	'+': (left: number, right: number): number => left + right,
@@ -15,7 +14,7 @@ type CalculatorProps = {
 	right: number
 }
 function Calculator({ left, operator, right }: CalculatorProps) {
-	// 💣 when you finish, remove this comment.
+	// @ts-expect-error 💣 when you finish, remove this comment.
 	const result = operations[operator](left, right)
 	return (
 		<div>
@@ -38,6 +37,4 @@ function App() {
 	)
 }
 
-const rootEl = document.createElement('div')
-document.body.append(rootEl)
-createRoot(rootEl).render(<App />)
+export default App

@@ -1,4 +1,3 @@
-import { createRoot } from 'react-dom/client'
 import {
 	ErrorBoundary,
 	useErrorBoundary,
@@ -125,6 +124,4 @@ function App() {
 	)
 }
 
-const rootEl = document.createElement('div')
-document.body.append(rootEl)
-createRoot(rootEl).render(<App />)
+export default App

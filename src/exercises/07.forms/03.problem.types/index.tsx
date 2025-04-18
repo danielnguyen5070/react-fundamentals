@@ -1,4 +1,4 @@
-import { createRoot } from 'react-dom/client'
+import React from "react"
 
 function App() {
 	return (
@@ -7,7 +7,7 @@ function App() {
 				<label htmlFor="usernameInput">Username:</label>
 				<input id="usernameInput" name="username" />
 			</div>
-			{/* 🐨 add appropriate inputs for:
+			{/* add appropriate inputs for:
 				- password
 				- age (accepting numbers from 0 to 200)
 				- photo (restricts the input to only accept image files)
@@ -19,6 +19,4 @@ function App() {
 	)
 }
 
-const rootEl = document.createElement('div')
-document.body.append(rootEl)
-createRoot(rootEl).render(<App />)
+export default App

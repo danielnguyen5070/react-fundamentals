@@ -1,5 +1,5 @@
-import { createRoot } from 'react-dom/client'
 import React from 'react'
+
 const operations = {
 	'+': (left: number, right: number): number => left + right,
 	'-': (left: number, right: number): number => left - right,
@@ -7,10 +7,12 @@ const operations = {
 	'/': (left: number, right: number): number => left / right,
 }
 
-// 🦺 create a type called CalculatorProps
+// create a type called CalculatorProps
 
-// 🦺 set the type for this props argument to CalculatorProps
+// set the type for this props argument to CalculatorProps
+// @ts-expect-error 💣 when you finish, remove this comment.
 function Calculator({ left, operator, right }) {
+	// @ts-expect-error we'll fix this one later
 	const result = operations[operator](left, right)
 	return (
 		<div>

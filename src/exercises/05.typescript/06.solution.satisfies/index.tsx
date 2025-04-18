@@ -1,4 +1,4 @@
-import { createRoot } from 'react-dom/client'
+import React from "react"
 
 type OperationFn = (left: number, right: number) => number
 
@@ -37,6 +37,4 @@ function App() {
 	)
 }
 
-const rootEl = document.createElement('div')
-document.body.append(rootEl)
-createRoot(rootEl).render(<App />)
+export default App

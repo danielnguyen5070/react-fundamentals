@@ -1,5 +1,4 @@
-import { createRoot } from 'react-dom/client'
-
+import React from 'react'
 // 🦺 create an OperationFn type that represents the common shape of the
 // operation functions below
 // 🦺 create an Operator type that's set to the union of +, -, *, and /
@@ -43,6 +42,4 @@ function App() {
 	)
 }
 
-const rootEl = document.createElement('div')
-document.body.append(rootEl)
-createRoot(rootEl).render(<App />)
+export default App

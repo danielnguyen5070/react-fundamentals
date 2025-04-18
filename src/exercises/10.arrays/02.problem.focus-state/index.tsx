@@ -1,5 +1,4 @@
-import { useEffect, useState } from 'react'
-import { createRoot } from 'react-dom/client'
+import React, { useEffect, useState } from 'react'
 
 function App() {
 	const [items, setItems] = useState([
@@ -119,14 +118,10 @@ function shuffle<ArrayType>(originalArray: Array<ArrayType>) {
 		currentIndex -= 1
 		// And swap it with the current element.
 		temporaryValue = array[currentIndex]
-		// @ts-expect-error
 		array[currentIndex] = array[randomIndex]
-		// @ts-expect-error
 		array[randomIndex] = temporaryValue
 	}
 	return array
 }
 
-const rootEl = document.createElement('div')
-document.body.append(rootEl)
-createRoot(rootEl).render(<App />)
+export default App

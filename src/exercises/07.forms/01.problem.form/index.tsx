@@ -1,4 +1,4 @@
-import { createRoot } from 'react-dom/client'
+import React from "react"
 
 function App() {
 	// 🐨 render a form
@@ -10,6 +10,4 @@ function App() {
 	return 'TODO'
 }
 
-const rootEl = document.createElement('div')
-document.body.append(rootEl)
-createRoot(rootEl).render(<App />)
+export default App

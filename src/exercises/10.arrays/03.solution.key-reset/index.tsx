@@ -1,5 +1,4 @@
 import { useState } from 'react'
-import { createRoot } from 'react-dom/client'
 
 function App() {
 	const [key, setKey] = useState(0)
@@ -11,6 +10,4 @@ function App() {
 	)
 }
 
-const rootEl = document.createElement('div')
-document.body.append(rootEl)
-createRoot(rootEl).render(<App />)
+export default App

@@ -1,4 +1,3 @@
-import { createRoot } from 'react-dom/client'
 import { ErrorBoundary, type FallbackProps } from 'react-error-boundary'
 
 function OnboardingForm() {
@@ -111,6 +110,4 @@ function App() {
 	)
 }
 
-const rootEl = document.createElement('div')
-document.body.append(rootEl)
-createRoot(rootEl).render(<App />)
+export default App

@@ -1,4 +1,4 @@
-import { createRoot } from 'react-dom/client'
+import React from "react"
 
 export function Box({
 	// 💯 you can keep the style and className props here, but you can make this
@@ -39,6 +39,4 @@ function App() {
 	)
 }
 
-const rootEl = document.createElement('div')
-document.body.append(rootEl)
-createRoot(rootEl).render(<App />)
+export default App

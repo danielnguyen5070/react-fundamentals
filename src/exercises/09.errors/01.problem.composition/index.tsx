@@ -1,4 +1,3 @@
-import { createRoot } from 'react-dom/client'
 // 🐨 bring in ErrorBoundary and FallbackProps type from react-error-boundary
 
 // 🐨 Rename this to OnboardingForm
@@ -88,7 +87,7 @@ function App() {
 					type="date"
 					// 💰 you can comment this out to avoid the runtime error
 					defaultValue={new Date('today').toISOString().slice(0, 10)}
-					// defaultValue={new Date().toISOString().slice(0, 10)}
+				// defaultValue={new Date().toISOString().slice(0, 10)}
 				/>
 			</div>
 			<button type="submit">Submit</button>
@@ -98,14 +97,10 @@ function App() {
 
 // 🐨 create an ErrorFallback component here that accepts FallbackProps
 // and renders the error.message
-// 💯 you can make it look nice if you want
-// 📜 https://github.com/bvaughn/react-error-boundary#errorboundary-with-fallbackcomponent-prop
 
 // 🐨 make a component called "App" that renders the OnboardingForm inside an
 // ErrorBoundary with the ErrorFallback as the FallbackComponent
 // 🦉 as a tip, you could use the onError prop if you wanted to report errors to
 // a reporting service like Sentry.io
 
-const rootEl = document.createElement('div')
-document.body.append(rootEl)
-createRoot(rootEl).render(<App />)
+export default App

@@ -1,4 +1,4 @@
-import { createRoot } from 'react-dom/client'
+import React from "react"
 
 type OperationFn = (left: number, right: number) => number
 // 💣 delete the Operator type
@@ -10,7 +10,7 @@ const operations: Record<Operator, OperationFn> = {
 	'*': (left, right) => left * right,
 	'/': (left, right) => left / right,
 }
-// 🦺 add "satisfies" here to ensure operations satisfies a Record with string keys and OperationFn values
+// add "satisfies" here to ensure operations satisfies a Record with string keys and OperationFn values
 
 type CalculatorProps = {
 	left?: number
@@ -40,6 +40,4 @@ function App() {
 	)
 }
 
-const rootEl = document.createElement('div')
-document.body.append(rootEl)
-createRoot(rootEl).render(<App />)
+export default App

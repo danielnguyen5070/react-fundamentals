@@ -1,0 +1,35 @@
+{
+	"compilerOptions": {
+		"target": "ESNext", // Use the latest ECMAScript features
+		"module": "ESNext", // Use ES modules
+		"lib": [
+			"DOM",
+			"DOM.Iterable",
+			"ESNext"
+		], // Include modern libraries for browser and ES features
+		"jsx": "react-jsx", // Use React's new JSX transform (React 17+)
+		"noImplicitAny": true, // Allow implicit 'any' types
+		"strict": true, // Enable all strict type-checking options
+		"esModuleInterop": true, // Enable compatibility with CommonJS modules
+		"forceConsistentCasingInFileNames": true, // Enforce consistent file name casing
+		"skipLibCheck": true, // Skip type checking of declaration files for faster builds
+		"moduleResolution": "Node", // Use Node.js module resolution
+		"resolveJsonModule": true, // Allow importing JSON files
+		"isolatedModules": true, // Ensure each file can be safely transpiled
+		"noEmit": true, // Do not emit compiled files (useful for pure type-checking)
+		"allowSyntheticDefaultImports": true, // Allow default imports from modules with no default export
+		"baseUrl": ".", // Set the base URL for module resolution
+		"paths": {
+			"@/*": [
+				"src/*"
+			] // Alias for cleaner imports
+		}
+	},
+	"include": [
+		"src/**/*"
+	], // Include all TypeScript and TSX files in the src folder
+	"exclude": [
+		"node_modules",
+		"dist"
+	] // Exclude unnecessary folders
+}

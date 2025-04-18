@@ -1,4 +1,4 @@
-import { createRoot } from 'react-dom/client'
+import React from 'react'
 
 const operations = {
 	'+': (left: number, right: number): number => left + right,
@@ -8,12 +8,12 @@ const operations = {
 }
 
 type CalculatorProps = {
-	// 🐨 make each of these optional
+	// make each of these optional
 	left: number
 	operator: keyof typeof operations
 	right: number
 }
-// 🐨 add defaults so if a user just uses <Calculator /> they'll get "0 + 0 = 0"
+// add defaults so if a user just uses <Calculator /> they'll get "0 + 0 = 0"
 function Calculator({ left, operator, right }: CalculatorProps) {
 	const result = operations[operator](left, right)
 	return (
@@ -41,6 +41,4 @@ function App() {
 	)
 }
 
-const rootEl = document.createElement('div')
-document.body.append(rootEl)
-createRoot(rootEl).render(<App />)
+export default App

@@ -1,9 +1,8 @@
-import { createRoot } from 'react-dom/client'
+import React from "react"
 
-// 🐨 add a className prop to each div and apply the correct class names
-// based on the text content
-// 💰 Here are the available class names: box, box--large, box--medium, box--small
-// 💰 each of the elements should have the "box" className applied
+// add a className prop to each div and apply the correct class names
+// Here are the available class names: box, box--large, box--medium, box--small
+// each of the elements should have the "box" className applied
 
 // 🐨 add a style prop to each div so their background color
 // matches what the text says it should be
@@ -14,7 +13,7 @@ const smallBox = <div>small lightblue box</div>
 const mediumBox = <div>medium pink box</div>
 const largeBox = <div>large orange box</div>
 
-// 💰 the sizelessColorlessBox should still be a box, just with no size or color
+// the sizelessColorlessBox should still be a box, just with no size or color
 const sizelessColorlessBox = <div>sizeless colorless box</div>
 
 function App() {
@@ -28,6 +27,4 @@ function App() {
 	)
 }
 
-const rootEl = document.createElement('div')
-document.body.append(rootEl)
-createRoot(rootEl).render(<App />)
+export default App

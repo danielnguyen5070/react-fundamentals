@@ -1,5 +1,3 @@
-import { createRoot } from 'react-dom/client'
-
 function App() {
 	function logFormData(formData: FormData) {
 		console.log(Object.fromEntries(formData))
@@ -51,6 +49,4 @@ function App() {
 	)
 }
 
-const rootEl = document.createElement('div')
-document.body.append(rootEl)
-createRoot(rootEl).render(<App />)
+export default App

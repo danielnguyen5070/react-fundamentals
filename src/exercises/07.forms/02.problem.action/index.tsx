@@ -1,9 +1,8 @@
-import { createRoot } from 'react-dom/client'
+import React from 'react'
 
 function App() {
 	return (
-		// 🐨 add an action prop pointing to "api/onboarding"
-		<form>
+		<form action="api/onboarding">
 			<div>
 				<label htmlFor="usernameInput">Username:</label>
 				<input id="usernameInput" name="username" />
@@ -13,6 +12,5 @@ function App() {
 	)
 }
 
-const rootEl = document.createElement('div')
-document.body.append(rootEl)
-createRoot(rootEl).render(<App />)
+export default App
+
