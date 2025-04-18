@@ -4,19 +4,15 @@
 
 		<script type="module">
 			import { createElement } from '/react.js'
-			import { createRoot } from '/react-dom/client.js'
+			import { createRoot } from 'https://esm.sh/react-dom/client'
 
 			const rootElement = document.getElementById('root')
-			// 🐨 create this DOM output with React elements:
 			// <div class="container">
 			// 	<span>Hello</span> <span>World</span>
 			// </div>
 			const element = createElement(
 				'div',
 				{ className: 'container' },
-				// 🐨 replace the "Hello World" with createElement calls that creates
-				// a span with the text "Hello" and another span with the text "World"
-				// also, you'll need to add a space string (" ") between the spans
 				'Hello World',
 			)
 

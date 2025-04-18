@@ -3,8 +3,8 @@
 		<div id="root"></div>
 
 		<script type="text/babel" data-type="module">
-			import * as React from '/react.js'
-			import { createRoot } from '/react-dom/client.js'
+			import React from 'https://esm.sh/react'
+			import { createRoot } from 'https://esm.sh/react-dom/client'
 
 			const rootElement = document.getElementById('root')
 
@@ -15,9 +15,9 @@
 				'/': (left, right) => left / right,
 			}
 
-			// 🐨 accept the right props in the Calculator component here
+			// accept the right props in the Calculator component here
 			function Calculator() {
-				// 💰 you can get the result with: operations[operator](left, right)
+				// you can get the result with: operations[operator](left, right)
 				return (
 					<div>
 						{/* 🐨 render the equation and its result here */}
@@ -39,9 +39,6 @@
 			createRoot(rootElement).render(element)
 		</script>
 
-		<script type="module" src="/babel-standalone.js"></script>
-
-		<!-- this is here to add automatic browser reloading as you save your work -->
-		<script type="module" src="epic_ws.js"></script>
+		<script type="module" src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
 	</body>
 </html>

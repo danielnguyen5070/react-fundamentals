@@ -3,38 +3,29 @@
 		<div id="root"></div>
 
 		<script type="module">
-			// 🐨 on the script tag above, change `type="module"`
-			// to `type="text/babel"` and add data-type="module" so babel will compile
-			// this code as a module script for the browser to run.
+			// change `type="module"` to `type="text/babel"` and data-type="module" 
+			// babel will compile this code as a module script for the browser to run.
 
-			// 🐨 babel compiles JSX to "React.createElement" instead of simply "createElement"
-			// so change this import to: import * as React from '/react.js'
-			import { createElement } from '/react.js'
-			import { createRoot } from '/react-dom/client.js'
+			// babel compiles JSX to "React.createElement" instead of simply "createElement"
+			import React, {createElement} from 'https://esm.sh/react'
+    		import { createRoot } from 'https://esm.sh/react-dom/client'
 
 			const rootElement = document.getElementById('root')
 
-			// 🐨 With babel compiling this code, you can now re-implement this using JSX!
+			// re-implement this using JSX!
 			const element = createElement('div', {
 				className: 'container',
 				children: 'Hello World',
 			})
 
-			// 💰 there are a few subtle differences between JSX and HTML. One such
-			// difference is how you apply a class to an element in JSX is by using
+			// there are a few subtle differences between JSX and HTML
 			// `className` rather than `class`!
-			// 📜 You can learn the differences between JSX and HTML syntax from the React docs here:
-			// https://react.dev/reference/react-dom/components/common
 
 			createRoot(rootElement).render(element)
 		</script>
 
-		<!-- 🐨 add Babel to the page.
-			💰 Here is the script tag that'll do the job:
-			<script type="module" src="/babel-standalone.js"></script>
+		<!-- add Babel to the page.
+		<script type="module" src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
 		-->
-
-		<!-- this is here to add automatic browser reloading as you save your work -->
-		<script type="module" src="epic_ws.js"></script>
 	</body>
 </html>

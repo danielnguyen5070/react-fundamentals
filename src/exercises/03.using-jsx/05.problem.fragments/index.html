@@ -3,13 +3,12 @@
 		<div id="root"></div>
 
 		<script type="text/babel" data-type="module">
-			import * as React from '/react.js'
-			import { createRoot } from '/react-dom/client.js'
+			import React from 'https://esm.sh/react'
+			import { createRoot } from 'https://esm.sh/react-dom/client'
 
 			const rootElement = document.getElementById('root')
 
-			// 🐨 replace the <div> with a React Fragment.
-			// 💯 try both syntaxes!
+			// replace the <div> with a React Fragment.
 			const element = (
 				<div className="container">
 					<p>Here's Sam's favorite food:</p>
@@ -23,9 +22,6 @@
 			createRoot(rootElement).render(element)
 		</script>
 
-		<script type="module" src="/babel-standalone.js"></script>
-
-		<!-- this is here to add automatic browser reloading as you save your work -->
-		<script type="module" src="epic_ws.js"></script>
+		<script type="module" src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
 	</body>
 </html>

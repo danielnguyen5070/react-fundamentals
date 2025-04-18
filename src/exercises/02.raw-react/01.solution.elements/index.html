@@ -3,8 +3,8 @@
 		<div id="root"></div>
 
 		<script type="module">
-			import { createElement } from '/react.js'
-			import { createRoot } from '/react-dom/client.js'
+			import React, {createElement} from 'https://esm.sh/react'
+    		import { createRoot } from 'https://esm.sh/react-dom/client'
 
 			const rootElement = document.getElementById('root')
 			const element = createElement(
@@ -15,8 +15,5 @@
 
 			createRoot(rootElement).render(element)
 		</script>
-
-		<!-- this is here to add automatic browser reloading as you save your work -->
-		<script type="module" src="epic_ws.js"></script>
 	</body>
 </html>
