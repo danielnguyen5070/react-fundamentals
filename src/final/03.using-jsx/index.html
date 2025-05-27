@@ -1,0 +1,26 @@
+<html>
+	<body>
+		<div id="root"></div>
+
+		<script type="text/babel" data-type="module">
+			import React from 'https://esm.sh/react'
+			import { createRoot } from 'https://esm.sh/react-dom/client'
+
+			const rootElement = document.getElementById('root')
+
+			const element = (
+				<>
+					<p>Here's Sam's favorite food:</p>
+					<ul className="sams-food">
+						<li>Green eggs</li>
+						<li>Ham</li>
+					</ul>
+				</>
+			)
+
+			createRoot(rootElement).render(element)
+		</script>
+
+		<script type="module" src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+	</body>
+</html>
