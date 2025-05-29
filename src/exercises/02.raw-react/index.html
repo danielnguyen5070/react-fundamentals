@@ -1,25 +1,2 @@
-<html>
-	<body>
-		<div id="root"></div>
-
-		<script type="module">
-			import React, {createElement} from 'https://esm.sh/react'
-    		import { createRoot } from 'https://esm.sh/react-dom/client'
-
-			const rootElement = document.getElementById('root')
-			const element = createElement(
-				'div',
-				{ className: 'container' },
-				createElement('p', null, `Here's Sam's favorite food:`),
-				createElement(
-					'ul',
-					{ className: 'sams-food' },
-					createElement('li', null, 'Green eggs'),
-					createElement('li', null, 'Ham'),
-				),
-			)
-
-			createRoot(rootElement).render(element)
-		</script>
-	</body>
-</html>
+<!-- import React, {createElement} from 'https://esm.sh/react' -->
+<!-- import { createRoot } from 'https://esm.sh/react-dom/client' -->
