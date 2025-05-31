@@ -1,7 +1,7 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Sidebar from './components/Sidebar';
-import Typescript from './exercises/05.typescript'
+import Typescript from './exercises/05.typescript';
 import Styling from './exercises/06.styling'
 import Forms from './exercises/07.forms'
 import Input from './exercises/08.inputs'

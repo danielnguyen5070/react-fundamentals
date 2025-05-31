@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+	</head>
+	<body>
+		<div id="root"></div>
+
+		<script type="text/babel" data-type="module">
+			import React from "https://esm.sh/react";
+			import { createRoot } from "https://esm.sh/react-dom/client";
+
+			const rootElement = document.getElementById("root");
+
+			const operations = {
+				"+": (left, right) => left + right,
+				"-": (left, right) => left - right,
+				"*": (left, right) => left * right,
+				"/": (left, right) => left / right,
+			};
+
+			function Calculator({ left, operator, right }) {
+				const result = operations[operator](left, right);
+				return (
+					<div>
+						<code>
+							{left} {operator} {right} ={" "}
+							<output>{result}</output>
+						</code>
+					</div>
+				);
+			}
+
+			const element = (
+				<div>
+					<h1>Calculator</h1>
+					<Calculator left={1} operator="+" right={2} />
+					<Calculator left={1} operator="-" right={2} />
+					<Calculator left={1} operator="*" right={2} />
+					<Calculator left={1} operator="/" right={2} />
+				</div>
+			);
+
+			createRoot(rootElement).render(element);
+		</script>
+
+		<script
+			type="module"
+			src="https://unpkg.com/@babel/standalone/babel.min.js"
+		></script>
+	</body>
+</html>
