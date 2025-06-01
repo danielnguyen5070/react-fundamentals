@@ -10,14 +10,19 @@
 		<script type="text/babel" data-type="module">
 			import React, { createElement } from "https://esm.sh/react";
 			import { createRoot } from "https://esm.sh/react-dom/client";
-
 			const root = document.getElementById("root");
+			const className = "hello-world";
+			const children = "Hello World";
+			const props = {
+				className,
+				children,
+			};
 			const element = (
-				<div>
-					<h1 className="class-name">Hello, World!</h1>
-				</div>
+				<>
+					<div {...props}></div>
+					<div {...props}></div>
+				</>
 			);
-
 			createRoot(root).render(element);
 		</script>
 		<script
