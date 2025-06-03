@@ -1,4 +1,9 @@
 // @ts-nocheck
+// 1. Narrow Types
+// 2. Derive Types
+// 3. Default Props
+// 4. Reduce Duplication
+// 5.Satisfies
 import React from 'react'
 
 const operations = {
