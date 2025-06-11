@@ -18,10 +18,6 @@ const menuItems = [
         path: '/forms'
     },
     {
-        label: 'Inputs',
-        path: '/inputs'
-    },
-    {
         label: 'Error Boundaries',
         path: '/errors'
     },
@@ -38,7 +34,7 @@ const Sidebar = () => {
                 className={`fixed top-0 left-0 h-screen w-64 bg-gray-900 text-white z-40 transform transition-transform duration-300 ease-in-out`}
             >
                 {/* Main nav */}
-                <nav className="p-4 space-y-2">
+                <nav className="p-4 space-y-2 mt-12">
                     {menuItems.map((menu, index) => (
                         <div key={index}>
                             <NavLink

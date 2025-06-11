@@ -1,13 +1,23 @@
 import React from "react"
+// bring in ErrorBoundary and FallbackProps type from react-error-boundary
+import { ErrorBoundary, FallbackProps, useErrorBoundary } from "react-error-boundary"
 
-function App() {
-	function logFormData(formData: FormData) {
-		console.log(Object.fromEntries(formData))
+function FormRegistration() {
+	const { showBoundary } = useErrorBoundary()
+	function logFormData(event: React.FormEvent<HTMLFormElement>) {
+		event.preventDefault()
+		try {
+			throw new Error("This is a simulated error for demonstration purposes.")
+		}
+		catch (error) {
+			// If an error occurs, we can call showBoundary to trigger the error boundary
+			showBoundary(error)
+		}
 	}
 
 	return (
 		<>
-			<form action={logFormData} className="max-w-md mx-auto p-6 bg-white rounded-lg shadow-md space-y-4">
+			<form onSubmit={logFormData} className="max-w-md mx-auto p-6 bg-white rounded-lg shadow-md space-y-4">
 				<h1 className="text-2xl font-bold text-center text-gray-800">User Registration</h1>
 				<div>
 					<label htmlFor="username" className="block text-sm font-medium text-gray-700 mb-1">
@@ -148,5 +158,33 @@ function App() {
 
 }
 
-export default App
+function App() {
+	return (
+		<div className="p-4">
+			<ErrorBoundary FallbackComponent={ErrorFallback}>
+				<FormRegistration />
+			</ErrorBoundary>
+			<ErrorBoundary FallbackComponent={ErrorFallback}>
+				<FormRegistration />
+			</ErrorBoundary>
+		</div>
+	)
+}
 
+function ErrorFallback({ error, resetErrorBoundary }: FallbackProps) {
+	return (
+		<div className="p-4 bg-red-100 text-red-800 rounded-md">
+			<h2 className="text-lg font-bold">Something went wrong!</h2>
+			<p>{error.message}</p>
+			<p>Please try again later.</p>
+			<button
+				onClick={resetErrorBoundary}
+				className="mt-4 px-3 py-1 bg-blue-500 text-white rounded hover:bg-blue-600"
+			>
+				Reset
+			</button>
+		</div>
+	)
+}
+
+export default App
