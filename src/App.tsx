@@ -4,13 +4,15 @@ import Sidebar from './components/Sidebar';
 import Typescript from './exercises/05.typescript';
 import Styling from './exercises/06.styling';
 import Forms from './exercises/07.forms';
-import Errors from './exercises/08.errors';
-import Arrays from './exercises/09.arrays';
+import Inputs from './exercises/08.inputs';
+import Errors from './exercises/09.errors';
+import Arrays from './exercises/10.arrays';
 
 const routes = [
   { path: "/typescript", element: <Typescript /> },
   { path: "/styling", element: <Styling /> },
   { path: "/forms", element: <Forms /> },
+  { path: "/inputs", element: <Inputs /> },
   { path: "/errors", element: <Errors /> },
   { path: "/arrays", element: <Arrays /> },
 ];

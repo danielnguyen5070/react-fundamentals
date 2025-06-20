@@ -18,6 +18,10 @@ const menuItems = [
         path: '/forms'
     },
     {
+        label: 'Inputs',
+        path: '/inputs'
+    },
+    {
         label: 'Error Boundaries',
         path: '/errors'
     },
