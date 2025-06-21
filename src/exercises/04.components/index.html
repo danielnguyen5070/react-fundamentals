@@ -2,32 +2,51 @@
 <html lang="en">
 	<head>
 		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta
+			name="viewport"
+			content="width=<device-width>, initial-scale=1.0"
+		/>
 		<title>Document</title>
 	</head>
 	<body>
-		<div id="root"></div>
-		<script type="text/babel" data-type="module">
-			import React, { createElement } from "https://esm.sh/react";
-			import { createRoot } from "https://esm.sh/react-dom/client";
-			const root = document.getElementById("root");
-			const className = "hello-world";
-			const children = "Hello World";
-			const props = {
-				className,
-				children,
-			};
-			const element = (
-				<>
-					<div {...props}></div>
-					<div {...props}></div>
-				</>
-			);
-			createRoot(root).render(element);
-		</script>
 		<script
 			type="module"
 			src="https://unpkg.com/@babel/standalone/babel.min.js"
 		></script>
+		<script type="text/babel" data-type="module">
+			import React, { createElement } from "https://esm.sh/react";
+			import { createRoot } from "https://esm.sh/react-dom/client";
+
+			const operations = {
+				"+": (left, right) => left + right,
+				"-": (left, right) => left - right,
+				"*": (left, right) => left * right,
+				"/": (left, right) => left / right,
+			};
+
+			const Calculator = ({ left, right, operation }) => {
+				const result = operations[operation](left, right);
+				return (
+					<div>
+						<p>
+							{left} {operation} {right} = {result}
+						</p>
+					</div>
+				);
+			};
+
+			const element = (
+				<>
+					<div className="container">
+						<Calculator left={10} right={5} operation="+" />
+						<Calculator left={10} right={5} operation="-" />
+						<Calculator left={10} right={5} operation="*" />
+						<Calculator left={10} right={5} operation="/" />
+					</div>
+				</>
+			);
+
+			createRoot(document.body).render(element);
+		</script>
 	</body>
 </html>

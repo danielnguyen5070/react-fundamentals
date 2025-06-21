@@ -1,26 +1,39 @@
-<!-- <script type="module" src="https://unpkg.com/@babel/standalone/babel.min.js"></script> -->
-<!-- Interpolation -->
-<!-- Spread props -->
-<!-- Fragments -->
 <!DOCTYPE html>
 <html lang="en">
 	<head>
 		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta
+			name="viewport"
+			content="width=<device-width>, initial-scale=1.0"
+		/>
 		<title>Document</title>
 	</head>
 	<body>
-		<div id="root"></div>
-		<script type="module">
+		<script
+			type="module"
+			src="https://unpkg.com/@babel/standalone/babel.min.js"
+		></script>
+		<script type="text/babel" data-type="module">
 			import React, { createElement } from "https://esm.sh/react";
 			import { createRoot } from "https://esm.sh/react-dom/client";
-			const root = document.getElementById("root");
-			const element = createElement(
-				"h1",
-				{ className: "hello-world" },
-				"Hello, World!"
+
+			const className = "container";
+			const children = "Hello, World!";
+			const props = { className, children };
+			const element = (
+				<>
+					<div className="container">
+						<p>Here's Sam's favorite food:</p>
+						<ul className="sams-food">
+							<li>Green eggs</li>
+							<li>Ham</li>
+						</ul>
+					</div>
+					<div>hello</div>
+				</>
 			);
-			createRoot(root).render(element);
+
+			createRoot(document.body).render(element);
 		</script>
 	</body>
 </html>
