@@ -194,16 +194,6 @@ function FormRegistration() {
   );
 }
 
-function App() {
-  return (
-    <div className="p-4">
-      <ErrorBoundary FallbackComponent={ErrorFallback}>
-        <FormRegistration />
-      </ErrorBoundary>
-    </div>
-  );
-}
-
 function ErrorFallback({ error, resetErrorBoundary }: FallbackProps) {
   return (
     <div className="p-4 bg-red-100 text-red-800 rounded-md">
@@ -218,6 +208,16 @@ function ErrorFallback({ error, resetErrorBoundary }: FallbackProps) {
       </button>
     </div>
   );
+}
+
+function App() {
+  return (
+    <ErrorBoundary FallbackComponent={ErrorFallback}>
+      <div className="min-h-screen flex items-center justify-center">
+        <FormRegistration />
+      </div>
+    </ErrorBoundary>
+  )
 }
 
 export default App;

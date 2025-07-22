@@ -1,14 +1,20 @@
-// @ts-nocheck
 import React from 'react'
 
+type OperationFn = (left: number, right: number) => number;
 const operations = {
 	"+": (left, right) => left + right,
 	"-": (left, right) => left - right,
 	"*": (left, right) => left * right,
 	"/": (left, right) => left / right,
-};
+	"**": (left, right) => left ** right,
+} satisfies Record<string, OperationFn>;
 
-function Calculator({ left, operator, right }) {
+type CalculatorProps = {
+	left?: number;
+	operator?: keyof typeof operations;
+	right?: number;
+};
+function Calculator({ left = 1, operator = "+", right = 1 }: CalculatorProps) {
 	const result = operations[operator](left, right);
 	return (
 		<div className="bg-white shadow-md rounded-xl p-4 w-full max-w-sm mx-auto my-4 border border-gray-200">
@@ -22,14 +28,15 @@ function Calculator({ left, operator, right }) {
 
 const App = () => {
 	return (
-		<div className="min-h-screen bg-gray-100 py-10 px-4">
+		<div className="min-h-screen py-10 px-4">
 			<h1 className="text-3xl font-bold text-center text-gray-800 mb-8">
 				Calculator
 			</h1>
-			<Calculator left={1} operator="+" right={2} />
-			<Calculator left={1} operator="-" right={2} />
-			<Calculator left={1} operator="*" right={2} />
+			<Calculator operator="+" right={2} />
+			<Calculator left={1} right={2} />
+			<Calculator left={1} operator="*" />
 			<Calculator left={1} operator="/" right={2} />
+			<Calculator left={1} operator="**" right={2} />
 		</div>
 	)
 }

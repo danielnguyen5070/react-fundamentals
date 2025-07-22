@@ -1,18 +1,27 @@
 import React from "react"
 import "./index.css"
 
-const smallBox = <div>small lightblue box</div>
-const mediumBox = <div>medium pink box</div>
-const largeBox = <div>large orange box</div>
-const sizelessColorlessBox = <div>sizeless colorless box</div>
+interface BoxProps extends React.ComponentProps<"div"> {
+	size?: "small" | "medium" | "large"
+}
+function Box({ size, ...props }: BoxProps) {
+	const className = size ? `box box-${size}` : "box";
+	return (
+		<div className={className}
+			style={{ ...props.style, fontStyle: "italic" }}
+			{...props}>
+
+		</div>
+	)
+}
 
 function App() {
 	return (
 		<div>
-			{smallBox}
-			{mediumBox}
-			{largeBox}
-			{sizelessColorlessBox}
+			<Box size="small" style={{ backgroundColor: "lightblue" }}>small lightblue box</Box>
+			<Box size="medium" style={{ backgroundColor: "pink" }}>medium pink box</Box>
+			<Box size="large" style={{ backgroundColor: "orange" }}>large orange box</Box>
+			<Box>sizeless colorless box</Box>
 		</div>
 	)
 }
